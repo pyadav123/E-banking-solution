@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>E-Banking Solution</title>
+    <style>
+        #main
+        {
+        width: 445px;
+        height: 408px;
+        border: 12px solid blueviolet;
+        margin: 0px auto;
+        margin-top: 112px;
+        }
+        #main h1
+        {
+            text-align:center;
+            color:white;
+        }
+        .mybtn {
+        background-color: white;
+        border: 2px solid black;
+        color: red;
+        text-align: center;
+        font-size: 24px;
+        width: 340px;
+        cursor: pointer;
+        height: 49px;
+        }
+        .bg {
+  animation:slide 3s ease-in-out infinite alternate;
+  background-image: linear-gradient(-60deg, #6c3 50%, #09f 50%);
+  bottom:0;
+  left:-50%;
+  opacity:.5;
+  position:fixed;
+  right:-50%;
+  top:0;
+  z-index:-1;
+}
+
+.bg2 {
+  animation-direction:alternate-reverse;
+  animation-duration:4s;
+}
+
+.bg3 {
+  animation-duration:5s;
+}
+        #main {
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+@keyframes slide {
+  0% {
+    transform:translateX(-25%);
+  }
+  100% {
+    transform:translateX(25%);
+  }
+}
+
+    </style>
+</head>
+<body>
+
+    <div id="main">
+        <div class="bg"></div>
+        <div class="bg bg2"></div>
+        <div class="bg bg3"></div>
+        <h1>E-Banking Solution</h1>
+        {% if msg %}
+            <p style="text-align:center;color:red;">{{msg}}</p>
+        {% endif %}
+        <table style="margin:0 auto;width:80%">
+            <tr>
+                <td>
+                    <button class="mybtn" onclick="window.location.href='{% url "createaccount" %}'">Create Account</button>
+                </td>
+            </tr>
+             <tr>
+                <td>
+                    <button class="mybtn" onclick="window.location.href='{% url "login" %}'">Deposite Account</button>
+                </td>
+            </tr>
+             <tr>
+                <td>
+                    <button class="mybtn" onclick="window.location.href='{% url "login" %}'">Withdraw Account</button>
+                </td>
+            </tr>
+             <tr>
+                <td>
+                    <button class="mybtn" onclick="window.location.href='{% url "login" %}'">Fund Tranfser</button>
+                </td>
+                  <tr>
+                <td>
+                    <button class="mybtn" onclick="window.location.href='{% url "login" %}'">Balance Enquiry</button>
+                </td>
+            </tr>
+            </tr>
+        </table>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>E-Banking Solution</title>
+    <style>
+    #main {
+    width: 445px;
+    height: 533px;
+    border: 8px solid violet;
+    margin: 64px auto;
+    margin-top: 32px;
+}
+        #main h1
+        {
+            text-align:center;
+            color:red;
+        }
+        .mybtn {
+        background-color: white;
+        border: 2px solid black;
+        color: red;
+        text-align: center;
+        font-size: 35px;
+        width: 340px;
+        cursor: pointer;
+        height: 49px;
+        }
+        .bg {
+  animation:slide 3s ease-in-out infinite alternate;
+  background-image: linear-gradient(-60deg, #6c3 50%, #09f 50%);
+  bottom:0;
+  left:-50%;
+  opacity:.5;
+  position:fixed;
+  right:-50%;
+  top:0;
+  z-index:-1;
+}
+
+.bg2 {
+  animation-direction:alternate-reverse;
+  animation-duration:4s;
+}
+
+.bg3 {
+  animation-duration:5s;
+}
+        #main {
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+@keyframes slide {
+  0% {
+    transform:translateX(-25%);
+  }
+  100% {
+    transform:translateX(25%);
+  }
+}
+    </style>
+</head>
+<body>
+    <div id="main">
+         <div class="bg"></div>
+        <div class="bg bg2"></div>
+        <div class="bg bg3"></div>
+        <h1>Create New Account</h1>
+        <form action="{% url 'create' %}" method="post">
+            {% csrf_token %}
+            <table style="margin:0 auto;width:84%;">
+                <tr>
+                    <td style="color:white">Enter Name</td>
+                    <td>
+                        <input type="text" name="name">
+                    </td>
+                </tr>
+                <tr>
+                    <td style="color:white">Select Gender</td>
+                    <td style="color :white">
+                        <input type="radio" name="gender" value="Male"/>Male
+                        <input type="radio" name="gender" value="Female"/>Female
+                    </td>
+                </tr>
+            <tr>
+                <td style="color:white;">Enter Address</td>
+                <td>
+                    <textarea name="address"></textarea>
+                </td>
+            </tr>
+                <tr>
+                    <td style="color:white;">Enter Contact No.</td>
+                    <td>
+                        <input type="number" name="contactno"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="color:white;">Enter Email Address</td>
+                    <td>
+                        <input type="email" name="emailaddress"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="color:white;">Enter PAN No</td>
+                    <td>
+                        <input type="text" name="panno"/>
+                    </td>
+                </tr>
+                 <tr>
+                    <td style="color:white;">Enter Aadhar no.</td>
+                    <td>
+                        <input type="number" name="aadharno"/>
+                    </td>
+                </tr>
+                 <tr>
+                    <td style="color:white;">Enter Opening Balance</td>
+                    <td>
+                        <input type="number" name="balance"/>
+                    </td>
+                </tr>
+                 <tr>
+                    <td style="color:white;">Enter Password</td>
+                    <td>
+                        <input type="password" name="password"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <input type="submit" value="Create"/>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</body>
+</html>
